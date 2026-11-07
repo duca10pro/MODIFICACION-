@@ -1,0 +1,321 @@
+:root{
+    --blanco: #fefae0;
+    --negro: #0d1321;
+    --principal: #335c67;
+    --secundario: #9e2a2b;
+    --celeste: #ade8f4;
+
+    --fuenteP: "Raleway", sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *::before, *:after{ box-sizing: inherit;}
+
+body{
+    font-size: 1.2rem;
+    font-family: var(--fuenteP);
+
+    /*LINEA DE CODIGO PARA EL DEGRADADO DE LA PAGINA DESDE ABAJO HACIA ARRIBA*/
+    background-image: linear-gradient(to top, #99d98c 0%,var(--blanco) 100%);
+}
+
+h1{font-size: 3.8rem;}
+h2{font-size: 2.8rem;}
+h3{font-size: 1.8rem;}
+h1,h2,h3{text-align: center;}
+
+/* LINEA DE CODIGO PARA LA BARRA DE NAVEGACION*/
+.nav-div{
+    /* AQUI LE DAMOS EL COLOR A LA BARRA DE NAVEGACION*/
+    background-color: var(--principal)
+}
+
+
+/* SE CREA EL CONTENEDOR CON DISPLAY-FLEX Y PARA QUE LOS HIJOS SEA FLEXIVE PARA MOVERLOS*/
+.navegacionp{
+        display: flex;
+        /* ESTA LINEA UBICA LOS ELEMENTO DE MANERA VERTICAL OSEA UNO ABAJO DE OTRO*/
+        flex-direction: column;
+}
+
+/*AQUI SE UTILIZA PARA CUANDO TOME ESE ESPACIO DE PONGA DE MANERA HORIZONTAL*/
+@media (min-width: 768px) { 
+    .navegacionp{
+        /*CON ESTA LINEA EL LA BARRA VUELVE A ESTAR EN HORIZONTAL*/
+        flex-direction: row;
+        /* Esta línea separa los elementos dejando espacio libre en medio */
+        justify-content: space-between;
+    }
+}
+
+.contenedor{
+    /* Define el ancho máximo que puede alcanzar este elemento*/
+    max-width: 120rem;
+    /* Centra horizontalmente la caja en la pantalla calculando los espacios izquierdo y derecho automáticamente */
+    margin: 0 auto;
+}
+
+
+/*CODIGO SOLO PARA MODIFICAR LOS ENLACES DE LA NAVEGACION*/
+.navegacionp a{
+    /* El enlace se estira a lo ancho de la pantalla, haciendo que toda la barra horizontal sea cliqueable, no solo las letras*/
+    display: block;
+    /* ESTA LINEA CENTRA EL TEXTO*/
+    text-align: center;
+    /* SE LE PONE COLOR A LA LETRA OSEA A LOS ENLACE*/
+    color: var(--blanco);
+    /* ESTA LINEA QUITA LA BARRA DE LA LETRAS OSEA A LOS ENLACE*/
+    text-decoration: none;
+    /* ESTA LINEA AUMENTA EL TAMANO DE LA LETRA OSEA LOS ENLACE*/
+    font-size: 2.2rem;
+    /* ESTA LINEA PONE EL TEXTO EN NEGRITA*/
+    font-weight: bold;
+    /* ESTA LINEA SE USA PARA RELLENAR UN ELEMANTO O SEPARAR CONTENIDO*/
+    padding: 1rem;
+}
+
+/* CODIGO de efecto visual que ocurre cuando el usuario pasa el cursor del ratón por encima de los enlaces */
+.navegacionp a:hover{
+    /* Cambia instantáneamente el color de fondo del bloque del enlace, pintándolo con el tono que guardaste en tu variable*/
+    background-color: var(--secundario);
+    /* Cambia el color del texto de las letras a negro */
+    color: var(--negro);
+}
+
+.img{
+    /* Define la ruta de la imagen que se usará como fondo del contenedor */
+    background-image: url(../IMG/desk-design-vector.webp);
+    /* Evita que la imagen de fondo se duplique o repita si el contenedor es muy grande */
+    background-repeat: no-repeat;
+    /* Escala la imagen para que cubra todo el contenedor sin deformarse, cortando los excesos si es necesario */
+    background-size: cover;
+    /* Define una altura fija de 450 píxeles para el contenedor */
+    height:  450px;
+     /* Establece un contexto de posicionamiento para poder alinear elementos hijos con 'absolute' dentro de él */
+    position: relative;
+    /* Agrega un espacio de separación hacia abajo de 2rem (aproximadamente 32px) respecto al siguiente elemento */
+    margin-bottom: 2rem;
+}
+
+/* sirve para crear una capa oscura protectora sobre una imagen de fondo.*/
+.contenido-img{
+     /* Desconecta el elemento del flujo normal para poder flotarlo o posicionarlo libremente sobre otros elementos */
+   position: absolute;
+     /* Aplica un color de fondo negro con un 50% de transparencia (el 0.5 final controla la opacidad) */
+   background-color: rgb(0 0 0 / 0.5);
+   /* Obliga al elemento a estirarse para ocupar todo el ancho de su contenedor padre */
+   width: 100%;
+   /* Obliga al elemento a estirarse para ocupar todo el alto de su contenedor padre */
+   height: 100%;
+   /* Convierte el contenedor en una caja flexible para controlar sus elementos hijos */
+   display: flex;
+   /* Acomoda los elementos hijos uno debajo del otro, en una columna vertical */
+   flex-direction: column;
+   /* Centra los elementos de forma horizontal (eje secundario cuando es columna) */
+   align-items: center;
+   /* Centra los elementos de forma vertical (eje principal cuando es columna) */
+   justify-content: center;
+}
+
+/* CODIGO PARA PONERLE COLOR BLANCO */
+.contenido-img h2{
+    color: var(--blanco);
+}
+
+.contenido-img .ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
+.boton{
+    background-image: linear-gradient(to right, #616161 0%, #9bc5c3 51%, #616161 100%);
+    margin: 10px;
+    padding: 1rem 3rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bolder;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: .5rem;
+    display: block;
+    outline: none;
+    border: none;
+    width: 85%;
+    
+}
+
+.boton:hover {
+    background-position: right center;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (min-width: 480px) { 
+    .boton{
+        width: auto;
+    }
+}
+
+/* AQUI EMPIEZA MY SERVICES*/
+.sombra{
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(109,112,116,0.5);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(109,112,116,0.5);
+    box-shadow: 0px 5px 15px 0px rgba(109,112,116,0.5);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+/* Se activa únicamente cuando la pantalla mide 768 píxeles o más de ancho (tablets y computadoras) */ 
+@media (min-width: 768px) { 
+    .servicios{
+        /* Convierte el contenedor en una cuadrícula (grid) bidimensional */
+        display: grid;
+         /* Crea automáticamente 3 columnas del mismo tamaño que se reparten el espacio disponible por igual */
+        grid-template-columns: repeat(3, 1fr);
+        /* Añade un espacio de separación horizontal de 2rem (unos 32px) únicamente entre las columnas */
+        column-gap: 2rem;
+    }
+}
+
+
+.servicio{
+    /* Convierte cada tarjeta de servicio en un contenedor flexible */
+    display: flex;
+    /* Acomoda los elementos internos (icono, título, texto) en una columna vertical */
+    flex-direction: column;
+    /* Centra todos los elementos horizontalmente dentro de la tarjeta */
+    align-items: center;
+}
+/* Aplica estilos específicamente a los títulos h3 que se encuentran dentro de una tarjeta .servicio */
+.servicio h3{
+     /* Cambia el color del texto usando el tono almacenado en tu variable llamada '--secundario' */
+    color: var(--secundario);
+     /* Pone la tipografía en negrita para darle más grosor, peso y que resalte a la vista */
+    font-weight: bold;
+}
+
+/* Aplica estilos específicamente a los párrafos (p) que se encuentran dentro de una tarjeta .servicio */
+.servicio p{
+    /* Centra el texto del párrafo de forma horizontal dentro de su espacio disponible */
+    text-align: center;
+     /* Define el interlineado (espacio vertical entre líneas de texto) multiplicando el tamaño de la letra por 2 */
+    line-height: 2;
+}
+
+/* Selecciona el elemento con la clase .iconos que está dentro de una tarjeta .servicio */
+.servicio .iconos{
+    /* Define una altura fija para el contenedor del icono */
+    height: 15rem;
+     /* Define un ancho fijo e igual a la altura para hacer que el contenedor sea un cuadrado perfecto */
+    width: 15rem;
+    /* Aplica el color de fondo usando el tono guardado en tu variable llamada '--principal' (por ejemplo, el círculo amarillo) */
+    background-color: var(--principal);
+    /* Redondea las esquinas al 50%, transformando la caja cuadrada en un círculo perfecto */
+    border-radius: 50%;
+    /* Convierte el círculo en un contenedor flexible para poder alinear el icono que metas dentro */
+    display: flex;
+    /* Centra el icono verticalmente dentro del círculo */
+    align-items: center;
+     /* Distribuye el espacio de forma equitativa alrededor del icono en el eje horizontal */
+    justify-content: space-evenly;
+}
+
+.formulario{
+    /* Define el color de fondo usando el tono de tu variable llamada '--celeste' */
+    background-color: var(--celeste);
+    width: min(60rem, 100%); /* UTILIZAR EL VALOR MAS PEQUEÑO */
+    margin: 0 auto; /*ES PARA CENTRAR HORIZONTALMENTE PARA FORMULARIO Y TAMBIEN TIENE QUE EL PADRE NO SER UN DISPLAY: FLEX; */
+    /* Añade un colchón de espacio interno de 2rem por los cuatro lados para que los campos no toquen los bordes */
+    padding: 2rem;
+    /* Redondea las esquinas exteriores del formulario para darle un aspecto más suave y moderno */
+    border-radius: 1rem;
+    /* Añade una sombra sutil de color negro con un 10% de opacidad alrededor de la tarjeta del formulario */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Aplica un degradado de fondo que va de abajo hacia arriba, iniciando en negro (#000) y terminando en tu color celeste */
+    background-image: linear-gradient(to top, #000 0%, var(--celeste) 100%);
+}
+
+
+  /* Quita por completo el borde gris que los navegadores le ponen por defecto a las etiquetas fieldset */
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend{
+    /* Centra el texto del título del formulario de manera horizontal */
+    text-align: center;
+    /* Le da un tamaño de fuente destacado e importante al título */
+    font-size: 1.8rem;
+    /* Convierte automáticamente todo el texto del título a letras MAYÚSCULAS */
+    text-transform: uppercase;
+    /* Pone la tipografía en negrita para que resalte mucho más */
+    font-weight: bold;
+    /* Separa el título hacia abajo dejando un margen de 2rem respecto a los campos de entrada */
+    margin-bottom: 2rem;
+    /* Pinta las letras del título utilizando el color almacenado en tu variable llamada '--principal' */
+    color: var(--principal);
+}
+
+
+/* Se activa únicamente en pantallas medianas y grandes que midan 768 píxeles o más de ancho */
+@media (min-width: 768px) { 
+    .contenedor-campos{
+    /* Convierte el contenedor de los campos en una cuadrícula bidimensional */
+    display: grid;
+    /* Divide el formulario en dos columnas exactas de igual tamaño (1fr cada una) */
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    column-gap: 1rem; /* Espacio entre las columnas */
+    /* Define la altura de las filas: las dos primeras automáticas y la tercera fija de 20rem (ideal para un textarea amplio) */
+    grid-template-rows: auto auto 20rem; /*  */
+    gap: 1rem; /* Espacio entre los campos */
+}
+}
+/* CODIGO PARA QUE OCUPE TODO EL ANCHO EL CORREO */
+.campo:nth-child(3),
+.campo:nth-child(4){ 
+    grid-column: 1 / 3; /* Ocupa ambas columnas */
+    
+}
+
+.campo{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label{
+    font-weight: bold;
+    margin-bottom: .5rem;
+    color: var(--blanco);
+    display: block;
+}
+.campo input{
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.campo .textarea{
+    height: 20rem;
+}
+
+.footer{
+    color: var(--negro);
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem;
+    
+}
+
